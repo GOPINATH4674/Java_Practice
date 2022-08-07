@@ -1,0 +1,27 @@
+package com.runner;
+
+import org.junit.runner.RunWith;
+import org.openqa.selenium.WebDriver;
+
+import com.Cucumber_Practice.BaseClass;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(features = "src\\test\\java\\com\\feature\\Adactin.feature" , glue = "com.stepdefinition")
+public class Test_Runner {
+	
+	public static WebDriver driver;
+	public  void srtUp() {
+		driver= BaseClass.browserLaunch("chrome");
+
+	}
+	
+	public void endUp() {
+		driver.close();
+
+	}
+	
+
+}
